@@ -1,17 +1,23 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>charlie&#39;s life</title>
-        <link>https://127.0.0.1/</link>
-        <description>Charlie&#39;s Life</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chavezayne@gmail.com (charlie)</managingEditor>
-            <webMaster>chavezayne@gmail.com (charlie)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 21 Dec 2020 16:29:54 &#43;0800</lastBuildDate>
-            <atom:link href="https://127.0.0.1/index.xml" rel="self" type="application/rss+xml" />
-        <item>
-    <title>新的篇章</title>
-    <link>https://127.0.0.1/%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/</link>
-    <pubDate>Mon, 21 Dec 2020 16:29:54 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://127.0.0.1/%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/</guid>
-    <description><![CDATA[这里记录我的思想灵魂。]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>charlie&#39;s life</title>
+    <link>https://127.0.0.1/</link>
+    <description>Recent content on charlie&#39;s life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>chavezayne@gmail.com (charlie)</managingEditor>
+    <webMaster>chavezayne@gmail.com (charlie)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 21 Dec 2020 16:29:54 +0800</lastBuildDate><atom:link href="https://127.0.0.1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>新的篇章</title>
+      <link>https://127.0.0.1/%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/</link>
+      <pubDate>Mon, 21 Dec 2020 16:29:54 +0800</pubDate>
+      <author>chavezayne@gmail.com (charlie)</author>
+      <guid>https://127.0.0.1/%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/</guid>
+      <description>这里记录我的思想灵魂。</description>
+    </item>
+    
+  </channel>
 </rss>
