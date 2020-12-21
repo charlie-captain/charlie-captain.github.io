@@ -11,16 +11,17 @@ jobs:
       - uses: actions/checkout@v1  # v2 does not have submodules option now
         with:
           ref: main
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: latest
-          # extended: true
+      # - name: Setup Hugo
+      #   uses: peaceiris/actions-hugo@v2
+      #   with:
+      #     hugo-version: latest
+      #     # extended: true
+      - uses: jakejarvis/hugo-build-action@master 
       - run: ls
       # - run: hugo new site . --force
-      - name: Build
-        run: hugo --minify
-      - run: ls
+      # - name: Build
+        # run: hugo --minify
+      # - run: ls
       - name: Push directory to another repository
         uses: cpina/github-action-push-to-another-repository@v1.2
         env:
