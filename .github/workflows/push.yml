@@ -20,11 +20,13 @@ jobs:
 
       - name: Build
         run: hugo
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Push directory to another repository
+        uses: cpina/github-action-push-to-another-repository@v1.2
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.personal_token }}
         with:
-          personal_token: ${{ secrets.personal_token }} # 这里的 ACTIONS_DEPLOY_KEY 则是上面设置 Private Key的变量名
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./public
-          commit_message: ${{ github.event.head_commit.message }}
+          source-directory: './public'
+          destination-github-username: 'charlie-captain'
+          destination-repository-name: 'charlie-captain.github.io'
+          user-email: chavezayne@gmail.com
+
