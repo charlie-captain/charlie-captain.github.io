@@ -29,4 +29,6 @@ jobs:
           destination-github-username: 'charlie-captain'
           destination-repository-name: 'charlie-captain.github.io'
           user-email: chavezayne@gmail.com
+          target-branch: main
+
 
