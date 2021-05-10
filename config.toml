@@ -4,10 +4,10 @@ baseURL = "https://127.0.0.1"
 defaultContentLanguage = "zh-cn"
 # theme
 # 主题
-theme = "LoveIt"
+theme = "fuji"
 # themes directory
 # 主题目录
-#themesDir = "/themes/LoveIt"
+#themesDir = "/themes/fuji"
 
 # website title
 # 网站标题
