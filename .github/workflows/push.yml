@@ -1,7 +1,6 @@
 name: Deploy Hugo
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
