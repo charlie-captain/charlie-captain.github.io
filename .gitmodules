@@ -1,6 +1,6 @@
 [submodule "themes/fuji"]
 	path = themes/fuji
 	url = https://github.com/amzrk2/hugo-theme-fuji.git
-[submodule "public"]
+[submodule "charlie-captain.github.io"]
 	path = public
 	url = https://github.com/charlie-captain/charlie-captain.github.io.git
