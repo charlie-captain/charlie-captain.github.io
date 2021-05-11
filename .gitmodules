@@ -1,5 +1,5 @@
 [submodule "charlie-captain.github.io"]
-	path = charlie-captain.github.io
+	path = public
 	url = https://github.com/charlie-captain/charlie-captain.github.io.git
 [submodule "themes/fuji"]
 	path = themes/fuji
