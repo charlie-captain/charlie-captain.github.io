@@ -16,7 +16,7 @@
 
 
 
-<title>404 Page not found - Chalrie&#39;s Blog</title>
+<title>Glide没有打印verbose的log - Chalrie&#39;s Blog</title>
 
 
 <meta name="author" content="Charlie-Captain" />
@@ -25,13 +25,16 @@
 <meta name="description" content="A minimal Hugo theme with nice theme color." />
 
 
+<meta name="keywords" content="Android" />
 
-<meta property="og:title" content="404 Page not found" />
-<meta name="twitter:title" content="404 Page not found" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://charlie-captain.github.io/404.html" /><meta property="og:image" content="https://charlie-captain.github.io/img/og.png" />
+
+<meta property="og:title" content="Glide没有打印verbose的log" />
+<meta name="twitter:title" content="Glide没有打印verbose的log" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://charlie-captain.github.io/post/glide/" /><meta property="og:description" content="前言 在我跟踪到Downsampler的地方时，明明看到有log的代码，却没有日志输出，原因很明显是在Log.isLoggable(TAG, Log.VERBOSE)这里 解决 adb shell setprop log.tag.Downsampler V 后面的V就是VERB" />
+<meta name="twitter:description" content="前言 在我跟踪到Downsampler的地方时，明明看到有log的代码，却没有日志输出，原因很明显是在Log.isLoggable(TAG, Log.VERBOSE)这里 解决 adb shell setprop log.tag.Downsampler V 后面的V就是VERB" /><meta property="og:image" content="https://charlie-captain.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://charlie-captain.github.io/img/og.png" />
+<meta name="twitter:image" content="https://charlie-captain.github.io/img/og.png" /><meta property="article:published_time" content="2021-06-09T12:13:38+08:00" /><meta property="article:modified_time" content="2021-06-09T12:13:38+08:00" />
 
 
 <style>
@@ -86,9 +89,47 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
-<div class="404-not-found" style="font-size: 2rem; padding-top: 1.5rem;">
-    <span>404 NOT FOUND</span>
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://charlie-captain.github.io/post/glide/">Glide没有打印verbose的log</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-06-09</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;160 words</span>
+<span><i class="iconfont icon-time-sharp"></i>&nbsp;1 minute</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/android">Android</a>&nbsp;</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <h2 id="前言">前言</h2>
+<p>在我跟踪到Downsampler的地方时，明明看到有log的代码，却没有日志输出，原因很明显是在Log.isLoggable(TAG, Log.VERBOSE)这里</p>
+<h2 id="解决">解决</h2>
+<pre><code>adb shell setprop log.tag.Downsampler V  
+</code></pre>
+<p>后面的V就是VERBOSE的意思，你也可以根据以下来定义</p>
+<pre><code>public static final int ASSERT = 7;
+public static final int DEBUG = 3;
+public static final int ERROR = 6;
+public static final int INFO = 4;
+public static final int VERBOSE = 2;
+public static final int WARN = 5;
+</code></pre>
+
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>Unless otherwise noted, the content of this site is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a>.</p>
+    </blockquote>
 </div>
+
+
 
             </div>
             <aside class="col-12 col-md-3 float-left sidebar">
@@ -129,9 +170,13 @@
             
         </div>
     </div>
-    
-    
-    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#解决">解决</a></li>
+  </ul>
+</nav></div>
 </aside>
         </div>
         <div class="btn">
@@ -183,6 +228,18 @@
             </span>
             
         </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#解决">解决</a></li>
+  </ul>
+</nav>
     </div>
     
     

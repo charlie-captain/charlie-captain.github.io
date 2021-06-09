@@ -16,7 +16,7 @@
 
 
 
-<title>404 Page not found - Chalrie&#39;s Blog</title>
+<title>Android - Chalrie&#39;s Blog</title>
 
 
 <meta name="author" content="Charlie-Captain" />
@@ -25,13 +25,14 @@
 <meta name="description" content="A minimal Hugo theme with nice theme color." />
 
 
+<link rel="alternate" type="application/rss+xml" href="https://charlie-captain.github.io/tags/android/index.xml" title="Chalrie's Blog" />
 
-<meta property="og:title" content="404 Page not found" />
-<meta name="twitter:title" content="404 Page not found" />
+<meta property="og:title" content="Android" />
+<meta name="twitter:title" content="Android" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://charlie-captain.github.io/404.html" /><meta property="og:image" content="https://charlie-captain.github.io/img/og.png" />
+<meta property="og:url" content="https://charlie-captain.github.io/tags/android/" /><meta property="og:image" content="https://charlie-captain.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://charlie-captain.github.io/img/og.png" />
+<meta name="twitter:image" content="https://charlie-captain.github.io/img/og.png" /><meta property="og:updated_time" content="2021-06-09T12:13:38+08:00" />
 
 
 <style>
@@ -86,9 +87,31 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
-<div class="404-not-found" style="font-size: 2rem; padding-top: 1.5rem;">
-    <span>404 NOT FOUND</span>
+
+<div class="page-info">
+  <span>Posts with the tag Android: </span>
 </div>
+
+
+
+<div class="post">
+  <h2 class="post-item post-title">
+    <a href="https://charlie-captain.github.io/post/glide/">Glide没有打印verbose的log</a>
+  </h2>
+  <div class="post-item post-meta">
+    <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-06-09</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;160 words</span>
+<span><i class="iconfont icon-time-sharp"></i>&nbsp;1 minute</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/android">Android</a>&nbsp;</span>
+
+  </div>
+  <div class="post-item post-summary markdown-body">
+    前言 在我跟踪到Downsampler的地方时，明明看到有log的代码，却没有日志输出，原因很明显是在Log.isLoggable(TAG, Log.VERBOSE)这里 解决 adb shell setprop log.tag.Downsampler V 后面的V就是VERB
+  </div>
+</div>
+
+
 
             </div>
             <aside class="col-12 col-md-3 float-left sidebar">
