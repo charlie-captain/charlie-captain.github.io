@@ -16,7 +16,7 @@
 
 
 
-<title>挖矿指南 - Chalrie&#39;s Blog</title>
+<title>ViewPager动态初始化最优方案 - Chalrie&#39;s Blog</title>
 
 
 <meta name="author" content="Charlie-Captain" />
@@ -25,16 +25,14 @@
 <meta name="description" content="A minimal Hugo theme with nice theme color." />
 
 
-<meta name="keywords" content="区块链" />
 
-
-<meta property="og:title" content="挖矿指南" />
-<meta name="twitter:title" content="挖矿指南" />
+<meta property="og:title" content="ViewPager动态初始化最优方案" />
+<meta name="twitter:title" content="ViewPager动态初始化最优方案" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://charlie-captain.github.io/post/%E6%8C%96%E7%9F%BF%E6%8C%87%E5%8D%97/" /><meta property="og:description" content="挖矿指南：新手必看 本文发于数字货币最热时段，请大家自行承担一切风险。 前期准备 硬件设备 ASIC 矿机 这个价格较高，主要是专门为比特币设计的，现在比特币不好挖，所以不推荐小白买。 GPU显卡 选择比较多，一般打游戏的" />
-<meta name="twitter:description" content="挖矿指南：新手必看 本文发于数字货币最热时段，请大家自行承担一切风险。 前期准备 硬件设备 ASIC 矿机 这个价格较高，主要是专门为比特币设计的，现在比特币不好挖，所以不推荐小白买。 GPU显卡 选择比较多，一般打游戏的" /><meta property="og:image" content="https://charlie-captain.github.io/img/og.png" />
+<meta property="og:url" content="https://charlie-captain.github.io/post/viewpager%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%80%E4%BC%98%E6%96%B9%E6%A1%88/" /><meta property="og:description" content="前景 默认初始化3个tab, 但是当联网获取到数据之后, 需要再新增一个tab,而且tab的顺序需要调整. 源码分析 定义变量缓存所需数据 //缓存fragment private val fragments = mutableMapOf&lt;Tab, Fragment&gt;() //缓存fragment的ItemI" />
+<meta name="twitter:description" content="前景 默认初始化3个tab, 但是当联网获取到数据之后, 需要再新增一个tab,而且tab的顺序需要调整. 源码分析 定义变量缓存所需数据 //缓存fragment private val fragments = mutableMapOf&lt;Tab, Fragment&gt;() //缓存fragment的ItemI" /><meta property="og:image" content="https://charlie-captain.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://charlie-captain.github.io/img/og.png" /><meta property="article:published_time" content="2021-05-10T21:16:24+08:00" /><meta property="article:modified_time" content="2021-05-10T21:16:24+08:00" />
+<meta name="twitter:image" content="https://charlie-captain.github.io/img/og.png" /><meta property="article:published_time" content="2022-02-15T18:01:37+08:00" /><meta property="article:modified_time" content="2022-02-15T18:01:37+08:00" />
 
 
 <style>
@@ -92,49 +90,127 @@
 <article>
     
     <h2 class="post-item post-title">
-        <a href="https://charlie-captain.github.io/post/%E6%8C%96%E7%9F%BF%E6%8C%87%E5%8D%97/">挖矿指南</a>
+        <a href="https://charlie-captain.github.io/post/viewpager%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%80%E4%BC%98%E6%96%B9%E6%A1%88/">ViewPager动态初始化最优方案</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-05-10</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2022-02-15</span>
 
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;544 words</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;575 words</span>
 <span><i class="iconfont icon-time-sharp"></i>&nbsp;2 minutes</span>
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE">区块链</a>&nbsp;</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
     </div>
     
     <div class="post-content markdown-body">
-        <h1 id="挖矿指南新手必看">挖矿指南：新手必看</h1>
-<p>本文发于数字货币最热时段，请大家自行承担一切风险。</p>
-<h2 id="前期准备">前期准备</h2>
-<h3 id="硬件设备">硬件设备</h3>
+        <h2 id="前景">前景</h2>
+<p>默认初始化3个tab, 但是当联网获取到数据之后, 需要再新增一个tab,而且tab的顺序需要调整.</p>
+<h2 id="源码分析">源码分析</h2>
+<h3 id="定义变量缓存所需数据">定义变量缓存所需数据</h3>
+<pre><code>//缓存fragment
+private val fragments = mutableMapOf&lt;Tab, Fragment&gt;()
+//缓存fragment的ItemId
+private val keyIdMap = mutableMapOf&lt;Tab, Int&gt;()
+//缓存tab的上一次的排序位置
+private val prePosList = mutableListOf&lt;Tab&gt;()
+</code></pre>
+<p>初始化的顺序</p>
 <ol>
-<li>ASIC 矿机 <br>
-这个价格较高，主要是专门为比特币设计的，现在比特币不好挖，所以不推荐小白买。</li>
-<li>GPU显卡
-选择比较多，一般打游戏的人都会有独立显卡，我这里不做推荐，大家可以参考下面网站去看收益排行在做决定。
-<a href="https://minerstat.com/hardware/gpus?lang=zh" target="_blank">https://minerstat.com/hardware/gpus?lang=zh</a></li>
+<li>instantiateItem</li>
+<li>getItemId
+//如果没有找到Fragment, 就调用下面getItem获取fragment</li>
+<li>getItem</li>
 </ol>
-<h3 id="电费低于15元度">电费低于1.5元/度</h3>
-<p>电费是挖矿的成本，如果每日挖到的收益减掉成本之后赚的不超过10元，不推荐挖了，如果随便玩玩，请随意。</p>
-<h2 id="开始挖矿">开始挖矿</h2>
-<h3 id="软件windows平台">软件（Windows平台）</h3>
-<p>有众多的内核和软件选择，推荐小白使用界面版本，简单易用。</p>
-<h4 id="开源矿工">开源矿工</h4>
-<p>支持90+币种，可以一键批量切换矿池、币种、钱包；批量一键升级内核、软件、驱动；一键批量超频，不依赖小飞机。
-这款软件是开源的，作者也说不抽水，推荐一波。
-<a href="https://ntminer.com/" target="_blank">https://ntminer.com/</a></p>
-<h3 id="矿池">矿池</h3>
-<p>你可以根据你想挖的币选择矿池，也可以看收益来选择，我用的比较多的是鱼池（f2pool)，如果你嫌麻烦，也可以直接在火币、币安，这些比较大型的网站的矿池去挖，具体教程可以去看官网。</p>
-<h3 id="软件使用">软件使用</h3>
-<ol>
-<li>选择币种</li>
-<li>选择矿池</li>
-<li>填写自己矿池用户名</li>
-</ol>
-<h2 id="收益提现">收益提现</h2>
-<p>如果是鱼池挖的，需要填写钱包地址，然后他会定时转钱到账。</p>
-<p>挖到的币，你可以币币交易换成USTD，一种类似美元的数字货币，他的价格跟美元相差无几，比较稳定，然后再把USTD换成人民币，可以看各个交易平台的规则。</p>
+<h2 id="刷新方案">刷新方案</h2>
+<h3 id="getitemposition">getItemPosition</h3>
+<pre><code>通过fragments获得key(tab) 
+然后key获得新的newIndex
+如果旧的index != newIndex,
+    清除缓存的fragment,清除id让其重新初始化
+    返回POSITION_NONE,让其重新初始化
+其余返回 POSITION_UNCHANGED
+</code></pre>
+<h2 id="源码">源码</h2>
+<pre><code>class MainPagePagerAdapter(fragmentManager: FragmentManager) :
+    FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+
+    private var tabList = listOf&lt;String&gt;(&quot;Chat&quot;, &quot;Camera&quot;, &quot;Story&quot;)
+
+    private val FRAGMENT_SIZE: Int
+        get() = tabList.size
+
+    private val fragments = mutableMapOf&lt;String, Fragment&gt;()
+    private val keyIdMap = mutableMapOf&lt;String, Int&gt;()
+    private val prePosList = mutableListOf&lt;String&gt;()
+    private var id = 0
+
+    override fun getItem(position: Int): Fragment {
+        return getFragment(position)
+    }
+
+    private fun getFragment(position: Int): Fragment {
+        val tab = tabList[position]
+        var fragment = fragments[tab]
+        if (fragment == null) {
+            fragment = Fragment()
+            fragments[tab] = fragment
+        }
+        return fragment
+    }
+
+    override fun getItemId(position: Int): Long {
+        //这个方法是通过itemId来获取fragment,所以要自己管理一份id
+        val key = tabList[position]
+        var savedId = keyIdMap[key]?.toLong()
+        if (savedId == null) {
+            savedId = (id).toLong()
+            keyIdMap[key] = id++
+        }
+        return savedId
+    }
+
+    override fun getCount(): Int {
+        return FRAGMENT_SIZE
+    }
+
+    override fun getItemPosition(`object`: Any): Int {
+        var key: String? = null
+        //找出fragment对应的key
+        fragments.forEach loop@{
+            if (it.value == `object`) {
+                key = it.key
+                return@loop
+            }
+        }
+        if (key == null) {
+            return POSITION_UNCHANGED
+        }
+        //取出旧的位置, 对比新的位置, 如果不相等就需要重新创建实例
+        val index = prePosList.indexOf(key!!)
+        var newIndex = -1
+        tabList.forEachIndexed { i, tab -&gt;
+            if (tab == key) {
+                newIndex = i
+            }
+        }
+        if (index != newIndex) {
+            //清除缓存
+            fragments.remove(key!!)
+            keyIdMap.remove(key!!)
+            return POSITION_NONE
+        }
+        return POSITION_UNCHANGED
+    }
+
+    fun update(listOf: List&lt;String&gt;) {
+        prePosList.clear()
+        prePosList.addAll(tabList.toList())
+        tabList = listOf
+        notifyDataSetChanged()
+    }
+
+}
+
+</code></pre>
 
     </div>
 </article>
@@ -191,20 +267,18 @@
     <div class="sidebar-item sidebar-toc">
         <h3>Table of Contents</h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#前期准备">前期准备</a>
+    <li><a href="#前景">前景</a></li>
+    <li><a href="#源码分析">源码分析</a>
       <ul>
-        <li><a href="#硬件设备">硬件设备</a></li>
-        <li><a href="#电费低于15元度">电费低于1.5元/度</a></li>
+        <li><a href="#定义变量缓存所需数据">定义变量缓存所需数据</a></li>
       </ul>
     </li>
-    <li><a href="#开始挖矿">开始挖矿</a>
+    <li><a href="#刷新方案">刷新方案</a>
       <ul>
-        <li><a href="#软件windows平台">软件（Windows平台）</a></li>
-        <li><a href="#矿池">矿池</a></li>
-        <li><a href="#软件使用">软件使用</a></li>
+        <li><a href="#getitemposition">getItemPosition</a></li>
       </ul>
     </li>
-    <li><a href="#收益提现">收益提现</a></li>
+    <li><a href="#源码">源码</a></li>
   </ul>
 </nav></div>
 </aside>
@@ -266,20 +340,18 @@
         <h3>Table of Contents</h3>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#前期准备">前期准备</a>
+    <li><a href="#前景">前景</a></li>
+    <li><a href="#源码分析">源码分析</a>
       <ul>
-        <li><a href="#硬件设备">硬件设备</a></li>
-        <li><a href="#电费低于15元度">电费低于1.5元/度</a></li>
+        <li><a href="#定义变量缓存所需数据">定义变量缓存所需数据</a></li>
       </ul>
     </li>
-    <li><a href="#开始挖矿">开始挖矿</a>
+    <li><a href="#刷新方案">刷新方案</a>
       <ul>
-        <li><a href="#软件windows平台">软件（Windows平台）</a></li>
-        <li><a href="#矿池">矿池</a></li>
-        <li><a href="#软件使用">软件使用</a></li>
+        <li><a href="#getitemposition">getItemPosition</a></li>
       </ul>
     </li>
-    <li><a href="#收益提现">收益提现</a></li>
+    <li><a href="#源码">源码</a></li>
   </ul>
 </nav>
     </div>

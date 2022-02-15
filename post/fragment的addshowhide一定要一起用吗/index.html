@@ -16,7 +16,7 @@
 
 
 
-<title>挖矿指南 - Chalrie&#39;s Blog</title>
+<title>Fragment的add,show,hide一定要一起用吗 - Chalrie&#39;s Blog</title>
 
 
 <meta name="author" content="Charlie-Captain" />
@@ -25,16 +25,14 @@
 <meta name="description" content="A minimal Hugo theme with nice theme color." />
 
 
-<meta name="keywords" content="区块链" />
 
-
-<meta property="og:title" content="挖矿指南" />
-<meta name="twitter:title" content="挖矿指南" />
+<meta property="og:title" content="Fragment的add,show,hide一定要一起用吗" />
+<meta name="twitter:title" content="Fragment的add,show,hide一定要一起用吗" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://charlie-captain.github.io/post/%E6%8C%96%E7%9F%BF%E6%8C%87%E5%8D%97/" /><meta property="og:description" content="挖矿指南：新手必看 本文发于数字货币最热时段，请大家自行承担一切风险。 前期准备 硬件设备 ASIC 矿机 这个价格较高，主要是专门为比特币设计的，现在比特币不好挖，所以不推荐小白买。 GPU显卡 选择比较多，一般打游戏的" />
-<meta name="twitter:description" content="挖矿指南：新手必看 本文发于数字货币最热时段，请大家自行承担一切风险。 前期准备 硬件设备 ASIC 矿机 这个价格较高，主要是专门为比特币设计的，现在比特币不好挖，所以不推荐小白买。 GPU显卡 选择比较多，一般打游戏的" /><meta property="og:image" content="https://charlie-captain.github.io/img/og.png" />
+<meta property="og:url" content="https://charlie-captain.github.io/post/fragment%E7%9A%84addshowhide%E4%B8%80%E5%AE%9A%E8%A6%81%E4%B8%80%E8%B5%B7%E7%94%A8%E5%90%97/" /><meta property="og:description" content="问题 两个fragment, fragmentTest1和fragmentTest2, 初始化fragmentTest1, 代码如下: supportFragmentManager.beginTransaction() .add(R.id.content, fragmentTest1, FragmentTest1::class.java.simpleName) .commit() 然后在一个点击事件跳转到fragmentTest2, 代码如下: val" />
+<meta name="twitter:description" content="问题 两个fragment, fragmentTest1和fragmentTest2, 初始化fragmentTest1, 代码如下: supportFragmentManager.beginTransaction() .add(R.id.content, fragmentTest1, FragmentTest1::class.java.simpleName) .commit() 然后在一个点击事件跳转到fragmentTest2, 代码如下: val" /><meta property="og:image" content="https://charlie-captain.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://charlie-captain.github.io/img/og.png" /><meta property="article:published_time" content="2021-05-10T21:16:24+08:00" /><meta property="article:modified_time" content="2021-05-10T21:16:24+08:00" />
+<meta name="twitter:image" content="https://charlie-captain.github.io/img/og.png" /><meta property="article:published_time" content="2022-02-15T18:05:17+08:00" /><meta property="article:modified_time" content="2022-02-15T18:05:17+08:00" />
 
 
 <style>
@@ -92,49 +90,142 @@
 <article>
     
     <h2 class="post-item post-title">
-        <a href="https://charlie-captain.github.io/post/%E6%8C%96%E7%9F%BF%E6%8C%87%E5%8D%97/">挖矿指南</a>
+        <a href="https://charlie-captain.github.io/post/fragment%E7%9A%84addshowhide%E4%B8%80%E5%AE%9A%E8%A6%81%E4%B8%80%E8%B5%B7%E7%94%A8%E5%90%97/">Fragment的add,show,hide一定要一起用吗</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-05-10</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2022-02-15</span>
 
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;544 words</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;831 words</span>
 <span><i class="iconfont icon-time-sharp"></i>&nbsp;2 minutes</span>
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE">区块链</a>&nbsp;</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
     </div>
     
     <div class="post-content markdown-body">
-        <h1 id="挖矿指南新手必看">挖矿指南：新手必看</h1>
-<p>本文发于数字货币最热时段，请大家自行承担一切风险。</p>
-<h2 id="前期准备">前期准备</h2>
-<h3 id="硬件设备">硬件设备</h3>
-<ol>
-<li>ASIC 矿机 <br>
-这个价格较高，主要是专门为比特币设计的，现在比特币不好挖，所以不推荐小白买。</li>
-<li>GPU显卡
-选择比较多，一般打游戏的人都会有独立显卡，我这里不做推荐，大家可以参考下面网站去看收益排行在做决定。
-<a href="https://minerstat.com/hardware/gpus?lang=zh" target="_blank">https://minerstat.com/hardware/gpus?lang=zh</a></li>
-</ol>
-<h3 id="电费低于15元度">电费低于1.5元/度</h3>
-<p>电费是挖矿的成本，如果每日挖到的收益减掉成本之后赚的不超过10元，不推荐挖了，如果随便玩玩，请随意。</p>
-<h2 id="开始挖矿">开始挖矿</h2>
-<h3 id="软件windows平台">软件（Windows平台）</h3>
-<p>有众多的内核和软件选择，推荐小白使用界面版本，简单易用。</p>
-<h4 id="开源矿工">开源矿工</h4>
-<p>支持90+币种，可以一键批量切换矿池、币种、钱包；批量一键升级内核、软件、驱动；一键批量超频，不依赖小飞机。
-这款软件是开源的，作者也说不抽水，推荐一波。
-<a href="https://ntminer.com/" target="_blank">https://ntminer.com/</a></p>
-<h3 id="矿池">矿池</h3>
-<p>你可以根据你想挖的币选择矿池，也可以看收益来选择，我用的比较多的是鱼池（f2pool)，如果你嫌麻烦，也可以直接在火币、币安，这些比较大型的网站的矿池去挖，具体教程可以去看官网。</p>
-<h3 id="软件使用">软件使用</h3>
-<ol>
-<li>选择币种</li>
-<li>选择矿池</li>
-<li>填写自己矿池用户名</li>
-</ol>
-<h2 id="收益提现">收益提现</h2>
-<p>如果是鱼池挖的，需要填写钱包地址，然后他会定时转钱到账。</p>
-<p>挖到的币，你可以币币交易换成USTD，一种类似美元的数字货币，他的价格跟美元相差无几，比较稳定，然后再把USTD换成人民币，可以看各个交易平台的规则。</p>
+        <h2 id="问题">问题</h2>
+<p>两个fragment, fragmentTest1和fragmentTest2, 初始化fragmentTest1, 代码如下:</p>
+<pre><code>supportFragmentManager.beginTransaction()
+    .add(R.id.content, fragmentTest1, FragmentTest1::class.java.simpleName)
+    .commit()
+</code></pre>
+<p>然后在一个点击事件跳转到fragmentTest2, 代码如下:</p>
+<pre><code>val fragmentTest2 = FragmentTest2()
+supportFragmentManager.beginTransaction().apply {
+add(R.id.content, fragmentTest2,&quot;FragmentTest2&quot;)
+    .show(fragmentTest2)
+    .addToBackStack(null)
+    .commit()
+}
+</code></pre>
+<p>很明显跳转没有加hide(fragmentTest1), 那么这里会发生什么问题呢?</p>
+<p>我们打印一下他们的生命周期,如下:</p>
+<pre><code>fragmentTest1: onViewCreated
+fragmentTest1: onResume
+fragmentTest2: onViewCreated
+fragmentTest2: onResume
+</code></pre>
+<p>为啥fragmentTest1仍然可见, 问题出现在这了, 我们只能乖乖的加上hide(fragment1),逻辑才正常. 这是为什么呢.</p>
+<blockquote>
+<p>加上hide之后, 需要重写onHiddenChanged来监听, 因为hide操作不会回调onPause</p>
+</blockquote>
+<h2 id="源码分析">源码分析</h2>
+<p>分析一下add,shou,hide到底做了些什么操作导致onHiddenChanged的回调.</p>
+<h4 id="commit">commit</h4>
+<pre><code>public int commit() {
+        return commitInternal(false);
+    }
+
+
+int commitInternal(boolean allowStateLoss) {
+        //省略
+
+        mManager.enqueueAction(this, allowStateLoss);
+        return mIndex;
+    }
+
+
+//后面的跳转省略, 给出跳转的方法, 主要是事务抛到fragment的handler去执行
+scheduleCommit();
+到
+mHost.getHandler().post(mExecCommit);
+
+mExecCommit的定义如下: 
+Runnable mExecCommit = new Runnable() {
+    @Override
+    public void run() {
+        execPendingActions();
+    }
+};
+</code></pre>
+<h4 id="execpendingactions">execPendingActions</h4>
+<pre><code>  public boolean execPendingActions() {
+        ensureExecReady(true);
+
+        //后面省略
+    }
+
+ private void ensureExecReady(boolean allowStateLoss) {
+ 		//...
+        try {
+            executePostponedTransaction(null, null);
+        } finally {
+            mExecutingActions = false;
+        }
+    }
+
+private void executePostponedTransaction(ArrayList&lt;BackStackRecord&gt; records,
+                                             ArrayList&lt;Boolean&gt; isRecordPop) {
+    //遍历mPostponedTransactions
+    //
+	listener.completeTransaction();
+    }
+</code></pre>
+<h4 id="completetransaction">completeTransaction</h4>
+<pre><code> public void completeTransaction() {
+ 			//省略标记
+            mRecord.mManager.completeExecute(mRecord, mIsBack, !canceled, true);
+        }
+
+终于到达完成事务的地方
+ void completeExecute(BackStackRecord record, boolean isPop, boolean runTransitions,
+                         boolean moveToState) {
+        if (isPop) {
+        	//出栈
+            record.executePopOps(moveToState);
+        } else {
+        	//进栈
+            record.executeOps();
+        }
+
+        //省略
+}
+
+</code></pre>
+<h4 id="excuteops">excuteOps</h4>
+<p>这个方法非常多的操作, 都是我们调用add, hide, show的时候添加进来的Op对象</p>
+<p>这里看看hideFragmnet</p>
+<pre><code> public void hideFragment(Fragment fragment) {
+        if (DEBUG) Log.v(TAG, &quot;hide: &quot; + fragment);
+        if (!fragment.mHidden) {
+            fragment.mHidden = true;
+            // Toggle hidden changed so that if a fragment goes through show/hide/show
+            // it doesn't go through the animation.
+            fragment.mHiddenChanged = !fragment.mHiddenChanged;
+        }
+    }
+</code></pre>
+<p>真相大白, 看到mHiddenChanged被修改了. 但是哪里通知fragment的呢?</p>
+<p>在做完一系列的add,hide,show之后, 会调用moveToState, 然后会调用moveFragmentToExpectedState, 最后有一句:</p>
+<pre><code>if (f.mHiddenChanged) {
+	completeShowHideFragment(f);
+}
+
+最后会调用
+
+fragment.mHiddenChanged = false;
+fragment.onHiddenChanged(fragment.mHidden);
+</code></pre>
+<p>看完这里, 我们把onHiddenChanged的路径找到了.</p>
 
     </div>
 </article>
@@ -191,20 +282,12 @@
     <div class="sidebar-item sidebar-toc">
         <h3>Table of Contents</h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#前期准备">前期准备</a>
+    <li><a href="#问题">问题</a></li>
+    <li><a href="#源码分析">源码分析</a>
       <ul>
-        <li><a href="#硬件设备">硬件设备</a></li>
-        <li><a href="#电费低于15元度">电费低于1.5元/度</a></li>
+        <li></li>
       </ul>
     </li>
-    <li><a href="#开始挖矿">开始挖矿</a>
-      <ul>
-        <li><a href="#软件windows平台">软件（Windows平台）</a></li>
-        <li><a href="#矿池">矿池</a></li>
-        <li><a href="#软件使用">软件使用</a></li>
-      </ul>
-    </li>
-    <li><a href="#收益提现">收益提现</a></li>
   </ul>
 </nav></div>
 </aside>
@@ -266,20 +349,12 @@
         <h3>Table of Contents</h3>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#前期准备">前期准备</a>
+    <li><a href="#问题">问题</a></li>
+    <li><a href="#源码分析">源码分析</a>
       <ul>
-        <li><a href="#硬件设备">硬件设备</a></li>
-        <li><a href="#电费低于15元度">电费低于1.5元/度</a></li>
+        <li></li>
       </ul>
     </li>
-    <li><a href="#开始挖矿">开始挖矿</a>
-      <ul>
-        <li><a href="#软件windows平台">软件（Windows平台）</a></li>
-        <li><a href="#矿池">矿池</a></li>
-        <li><a href="#软件使用">软件使用</a></li>
-      </ul>
-    </li>
-    <li><a href="#收益提现">收益提现</a></li>
   </ul>
 </nav>
     </div>

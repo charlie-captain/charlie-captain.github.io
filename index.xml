@@ -6,7 +6,52 @@
     <description>Recent content on Chalrie&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Jun 2021 12:13:38 +0800</lastBuildDate><atom:link href="https://charlie-captain.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Feb 2022 18:06:04 +0800</lastBuildDate><atom:link href="https://charlie-captain.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>View的Scale属性不会改变宽高</title>
+      <link>https://charlie-captain.github.io/post/view%E7%9A%84scale%E5%B1%9E%E6%80%A7%E4%B8%8D%E4%BC%9A%E6%94%B9%E5%8F%98%E5%AE%BD%E9%AB%98/</link>
+      <pubDate>Tue, 15 Feb 2022 18:06:04 +0800</pubDate>
+      
+      <guid>https://charlie-captain.github.io/post/view%E7%9A%84scale%E5%B1%9E%E6%80%A7%E4%B8%8D%E4%BC%9A%E6%94%B9%E5%8F%98%E5%AE%BD%E9%AB%98/</guid>
+      <description>今天算是遇到一个问题, 一个View的scale改变之后, 我怎么去计算view里面的位置呢, 比如画一个点在他的某个点上, x和y需要相应进行scale换算吗? 看完上面的内容, 很明显, scale不会改变vi</description>
+    </item>
+    
+    <item>
+      <title>Fragment的add,show,hide一定要一起用吗</title>
+      <link>https://charlie-captain.github.io/post/fragment%E7%9A%84addshowhide%E4%B8%80%E5%AE%9A%E8%A6%81%E4%B8%80%E8%B5%B7%E7%94%A8%E5%90%97/</link>
+      <pubDate>Tue, 15 Feb 2022 18:05:17 +0800</pubDate>
+      
+      <guid>https://charlie-captain.github.io/post/fragment%E7%9A%84addshowhide%E4%B8%80%E5%AE%9A%E8%A6%81%E4%B8%80%E8%B5%B7%E7%94%A8%E5%90%97/</guid>
+      <description>问题 两个fragment, fragmentTest1和fragmentTest2, 初始化fragmentTest1, 代码如下: supportFragmentManager.beginTransaction() .add(R.id.content, fragmentTest1, FragmentTest1::class.java.simpleName) .commit() 然后在一个点击事件跳转到fragmentTest2, 代码如下: val</description>
+    </item>
+    
+    <item>
+      <title>LiveData为什么会初始化</title>
+      <link>https://charlie-captain.github.io/post/livedata%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
+      <pubDate>Tue, 15 Feb 2022 18:04:03 +0800</pubDate>
+      
+      <guid>https://charlie-captain.github.io/post/livedata%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%88%9D%E5%A7%8B%E5%8C%96/</guid>
+      <description>问题: 为什么有的时候在进入一些页面的时候，livedata.observe{ 这里的代码会执行 }? LiveData源码解析 setValue @MainThread protected void setValue(T value) { assertMainThread(&amp;quot;setValue&amp;quot;); mVersion++; //注意这个 mData = value; dispatchingValue(null); } dispatchingValue //省略 considerNotify(iterator.next().getValue()); //省略 considerNotify private void considerNotify(ObserverWrapper observer) { if (!observer.mActive) { return; }</description>
+    </item>
+    
+    <item>
+      <title>ViewPager动态初始化最优方案</title>
+      <link>https://charlie-captain.github.io/post/viewpager%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%80%E4%BC%98%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Tue, 15 Feb 2022 18:01:37 +0800</pubDate>
+      
+      <guid>https://charlie-captain.github.io/post/viewpager%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%80%E4%BC%98%E6%96%B9%E6%A1%88/</guid>
+      <description>前景 默认初始化3个tab, 但是当联网获取到数据之后, 需要再新增一个tab,而且tab的顺序需要调整. 源码分析 定义变量缓存所需数据 //缓存fragment private val fragments = mutableMapOf&amp;lt;Tab, Fragment&amp;gt;() //缓存fragment的ItemI</description>
+    </item>
+    
+    <item>
+      <title>Glide 是如何运作的,这篇3分钟看懂</title>
+      <link>https://charlie-captain.github.io/post/glide%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Tue, 15 Feb 2022 17:48:13 +0800</pubDate>
+      
+      <guid>https://charlie-captain.github.io/post/glide%E6%B5%81%E7%A8%8B/</guid>
+      <description>流程 with 初始化glide,线程池(Engine)[默认使用GlideExecutor, 根据cpu计算线程数量,最小4个 ] 监听生命周期和网络 load 设置资源地址-资源的属性 into 为target设置request, 加</description>
+    </item>
+    
     <item>
       <title>Glide没有打印verbose的log</title>
       <link>https://charlie-captain.github.io/post/glide/</link>
